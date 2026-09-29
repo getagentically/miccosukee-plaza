@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Miccosukee Plaza — a new state-of-the-art stop on the Tamiami Trail between Miami and Naples, owned and operated by the Miccosukee Tribe of Indians of Florida.">
+<title>Miccosukee Plaza</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#16130F; --paper:#FBF9F5; --panel:#F1EDE4; --line:#DCD5C8;
+  --muted:#6E665A; --text:#2A2521;
+  --red:#C8102E; --gold:#F2B705; --gold-deep:#D99E00; --black:#111111;
+  --on-dark:#FBF9F5; --dark:#171411; --dark-2:#221E1A;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#141210; --panel:#1E1A16; --line:#332D27; --muted:#A99F92; --text:#EDE7DD; --ink:#FBF9F5;
+    --dark:#0E0C0A; --dark-2:#1A1613;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#141210; --panel:#1E1A16; --line:#332D27; --muted:#A99F92; --text:#EDE7DD; --ink:#FBF9F5;
+  --dark:#0E0C0A; --dark-2:#1A1613;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1;margin:0;text-wrap:balance;color:var(--ink)}
+h2{font-size:clamp(2.1rem,4.5vw,3.4rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+h3{font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+p{margin:0}
+.wrap{width:min(1180px,100%);margin-inline:auto;padding-inline:20px}
+.eyebrow{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;color:var(--red)}
+.stripe{height:10px;background:linear-gradient(90deg,var(--black) 0 25%,var(--red) 25% 50%,var(--gold) 50% 75%,#fff 75% 100%)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* draft banner */
+.draft{background:var(--gold);color:#111;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;text-align:center;padding:6px 20px}
+.draft span{font-family:var(--body);text-transform:none;letter-spacing:0;font-weight:500}
+
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--dark);color:var(--on-dark);border-bottom:1px solid #2b2521}
+.nav{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.35rem;text-transform:uppercase;letter-spacing:.04em}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;gap:4px;flex-wrap:wrap}
+.nav li a{display:block;padding:8px 12px;text-decoration:none;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;color:var(--on-dark);border-bottom:3px solid transparent}
+.nav li a:hover{border-bottom-color:var(--gold)}
+.nav .cta{background:var(--red);border-radius:3px;border-bottom:0}
+@media (max-width:760px){.nav ul li:not(:last-child){display:none}}
+
+/* hero */
+.hero{position:relative;background:var(--dark);color:var(--on-dark);min-height:520px;display:grid;align-items:end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.15) 0%,rgba(17,17,17,.55) 55%,rgba(17,17,17,.92) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-block:72px 44px;display:grid;gap:18px;max-width:1180px}
+.hero .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem;color:var(--gold)}
+.hero .kicker::before{content:"";width:34px;height:3px;background:var(--gold)}
+.hero h1{font-size:clamp(3rem,8vw,6.2rem);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:.005em;max-width:14ch}
+.hero .sub{font-size:clamp(1.05rem,1.6vw,1.35rem);max-width:56ch;color:#E9E2D6}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.btn{display:inline-block;padding:14px 22px;border-radius:3px;text-decoration:none;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:1rem;border:2px solid transparent}
+.btn-red{background:var(--red);color:#fff}
+.btn-ghost{border-color:#fff;color:#fff}
+.btn-dark{background:var(--black);color:#fff}
+
+/* quick links (Buc-ee's-style trio) */
+.quick{background:var(--panel);border-block:1px solid var(--line)}
+.quick .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.quick a{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:26px 20px;text-decoration:none;border-right:1px solid var(--line)}
+.quick a:last-child{border-right:0}
+.quick .ic{width:56px;height:56px;border-radius:50%;background:var(--black);display:grid;place-items:center;color:var(--gold)}
+.quick .ic svg{width:30px;height:30px}
+.quick h3{font-size:1.35rem}
+.quick p{color:var(--muted);font-size:.95rem}
+@media (max-width:760px){.quick .wrap{grid-template-columns:1fr}.quick a{border-right:0;border-bottom:1px solid var(--line)}.quick a:last-child{border-bottom:0}}
+
+/* sections */
+section.block{padding-block:84px}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.split .copy{display:grid;gap:18px}
+.split .copy p{max-width:60ch;font-size:1.08rem}
+.photo{border-radius:4px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.photo img{aspect-ratio:4/3;object-fit:cover;width:100%}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:32px}}
+
+/* amenities */
+.amen{background:var(--dark);color:var(--on-dark)}
+.amen h2,.amen h3{color:#fff}
+.amen .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#2b2521;border:1px solid #2b2521;margin-top:36px}
+.amen .cell{min-width:0;background:var(--dark-2);padding:26px 22px;display:grid;gap:10px;align-content:start}
+.amen .cell svg{width:34px;height:34px;color:var(--gold)}
+.amen .cell p{color:#C9BFB2;font-size:.95rem}
+.tag{display:inline-block;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;padding:3px 8px;border:1px dashed var(--gold);color:var(--gold);border-radius:2px;width:auto;justify-self:start;line-height:1.4}
+@media (max-width:960px){.amen .grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.amen .grid{grid-template-columns:1fr}}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:10px;margin-top:36px}
+.gallery figure{margin:0;overflow:hidden;border-radius:3px;background:var(--panel)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery .tall{grid-row:span 2}
+.gallery .wide{grid-column:span 2}
+@media (max-width:860px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}}
+@media (prefers-reduced-motion:reduce){.gallery img{transition:none}}
+
+/* route */
+.route{background:var(--panel);border-block:1px solid var(--line)}
+.route .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.sign{background:#0f5b3a;color:#fff;border:6px solid #fff;outline:3px solid #0f5b3a;border-radius:10px;padding:26px 28px;font-family:var(--display);text-transform:uppercase;box-shadow:0 20px 40px -24px rgba(0,0,0,.5)}
+.sign .row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;letter-spacing:.02em;padding:8px 0;border-bottom:2px solid rgba(255,255,255,.25)}
+.sign .row:last-child{border-bottom:0}
+.sign .row.here{color:var(--gold)}
+.sign small{font-size:.9rem;letter-spacing:.12em;opacity:.8}
+.addr{display:grid;gap:14px}
+.addr .big{font-family:var(--display);font-weight:700;font-size:1.6rem;text-transform:uppercase;line-height:1.15;color:var(--ink)}
+.addr dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0}
+.addr dt{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;color:var(--muted);padding-top:3px}
+.addr dd{margin:0}
+.pending{color:var(--muted);font-style:italic;border-bottom:1px dashed var(--line)}
+@media (max-width:860px){.route .wrap{grid-template-columns:1fr;gap:32px}}
+
+/* tribe */
+.tribe .split{grid-template-columns:.8fr 1.2fr}
+.seal{display:grid;place-items:center;padding:30px}
+.seal img{width:min(360px,80%);border-radius:50%;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+
+/* footer */
+footer{background:var(--black);color:#D9D1C4;padding-block:48px 28px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h3{color:#fff;font-size:1.1rem;margin-bottom:10px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none;color:#D9D1C4}
+footer a:hover{color:var(--gold)}
+footer .fine{border-top:1px solid #2b2521;margin-top:36px;padding-top:18px;font-size:.85rem;color:#9a9083;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:760px){footer .cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="images/logo.jpg" alt="">Miccosukee Plaza</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#tribe">The Tribe</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a class="cta" href="https://www.google.com/maps/dir/?api=1&destination=25.76142,-80.77252" target="_blank" rel="noopener">Get Directions</a></li>
+    </ul>
+  </div>
+  <div class="stripe"></div>
+</header>
+
+<section class="hero" id="top">
+  <img class="bg" src="images/hero.jpg" alt="Inside Miccosukee Plaza — aisles, coolers and the Tribe seal on the wall">
+  <div class="wrap">
+    <span class="kicker">Now open · Tamiami Trail</span>
+    <h1>The stop between Miami and Naples.</h1>
+    <p class="sub">A new, state-of-the-art plaza on the Tamiami Trail, owned and operated by the Miccosukee Tribe of Indians of Florida. Fuel up, eat well, and take a piece of the Everglades with you.</p>
+    <div class="actions">
+      <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=25.76142,-80.77252" target="_blank" rel="noopener">Get Directions</a>
+      <a class="btn btn-ghost" href="#amenities">What's Inside</a>
+    </div>
+  </div>
+</section>
+
+<div class="quick">
+  <div class="wrap">
+    <a href="#amenities">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M4 21h10M6 11h6M14 9h2a2 2 0 0 1 2 2v6a1.5 1.5 0 0 0 3 0V9l-2.5-2.5"/></svg></span>
+      <span><h3>Fuel</h3><p>Fill up before the long stretch of the Trail.</p></span>
+    </a>
+    <a href="#amenities">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18l-1.5 9h-15z"/><path d="M5 11a7 7 0 0 1 14 0"/><path d="M12 4v-1"/></svg></span>
+      <span><h3>Food Court</h3><p>Hot food and cold drinks, made for the road.</p></span>
+    </a>
+    <a href="#amenities">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l1 5H5z"/><path d="M5 7v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7"/><path d="M9 11v2M15 11v2"/></svg></span>
+      <span><h3>General Store &amp; Gifts</h3><p>Snacks, essentials, and Everglades keepsakes.</p></span>
+    </a>
+  </div>
+</div>
+
+<section class="block" id="about">
+  <div class="wrap split">
+    <div class="copy">
+      <span class="eyebrow">About the Plaza</span>
+      <h2>Built for the road. Rooted in the Everglades.</h2>
+      <p>Miccosukee Plaza opened on September 1, 2026 at 36340 SW 8th Street, right on the Tamiami Trail in western Miami-Dade County, between the Miccosukee Casino &amp; Resort and the Miccosukee Indian Village.</p>
+      <p>It's a brand-new, state-of-the-art plaza for anyone traveling the Trail: a gas station, a food court, a general store and gift shop, and educational exhibits about the Everglades and the people who have called it home for generations.</p>
+      <div class="actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px">
+        <a class="btn btn-dark" href="#tribe">Meet the Tribe</a>
+      </div>
+    </div>
+    <div class="photo"><img src="images/about.jpg" alt="Gift shop hats and tees beside the fresh produce aisle inside Miccosukee Plaza"></div>
+  </div>
+</section>
+
+<section class="block amen" id="amenities">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold)">What's Inside</span>
+    <h2>Everything a traveler needs, in one stop.</h2>
+    <div class="grid">
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M4 21h10M6 11h6M14 9h2a2 2 0 0 1 2 2v6a1.5 1.5 0 0 0 3 0V9l-2.5-2.5"/></svg>
+        <h3>Fuel</h3>
+        <p>Gas station on site.</p>
+        <span class="tag">Fuel types &amp; pump count — to confirm</span>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18l-1.5 9h-15z"/><path d="M5 11a7 7 0 0 1 14 0"/><path d="M12 4v-1"/></svg>
+        <h3>Food Court</h3>
+        <p>Grab-and-go meals, coffee and iced tea, frozen drinks, and hot food.</p>
+        <span class="tag">Vendor names &amp; menu — to confirm</span>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l1 5H5z"/><path d="M5 7v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7"/><path d="M9 11v2M15 11v2"/></svg>
+        <h3>General Store</h3>
+        <p>Snacks, drinks, ice, dairy, water and juice, plus road essentials.</p>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>
+        <h3>Gift Shop</h3>
+        <p>Apparel, plush gators, and Everglades keepsakes to take home.</p>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v5l3 10a2 2 0 0 1-2 3H7a2 2 0 0 1-2-3l3-10z"/><path d="M8 8h8"/></svg>
+        <h3>Beer &amp; Wine</h3>
+        <p>A curated wall of wine and cold beer.</p>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20c3-8 8-12 18-14-2 10-6 15-14 16"/><path d="M3 20l8-8"/></svg>
+        <h3>Everglades Exhibits</h3>
+        <p>Educational displays featuring the wildlife of the Everglades.</p>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+        <h3>ATM</h3>
+        <p>Cash on hand for the rest of the drive.</p>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Hours</h3>
+        <p>Open daily.</p>
+        <span class="tag">Exact hours — to confirm</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="gallery">
+  <div class="wrap">
+    <span class="eyebrow">Take a Look</span>
+    <h2>Inside the plaza</h2>
+    <div class="gallery">
+      <figure class="tall"><img src="images/g-frozen.jpg" alt="Frozen drink and fountain station beneath the Miccosukee seal"></figure>
+      <figure><img src="images/g-drinks.jpg" alt="Cold drinks on ice"></figure>
+      <figure><img src="images/g-wine.jpg" alt="Wine wall and beer coolers"></figure>
+      <figure><img src="images/g-hotfood.jpg" alt="Hot food ready to go"></figure>
+      <figure><img src="images/g-gators.jpg" alt="Plush alligators and Everglades gifts"></figure>
+      <figure><img src="images/g-fresh.jpg" alt="Fresh and ready snacks beside the produce"></figure>
+      <figure><img src="images/g-road.jpg" alt="Road essentials: oil, coolant and wiper fluid"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block tribe" id="tribe">
+  <div class="wrap split">
+    <div class="seal"><img src="images/seal.jpg" alt="Seal of the Miccosukee Tribe of Indians of Florida"></div>
+    <div class="copy">
+      <span class="eyebrow">Miccosukee Tribe of Indians of Florida</span>
+      <h2>Stewards of the Everglades.</h2>
+      <p>The Miccosukee Tribe of Indians of Florida has lived in the Everglades for generations and was federally recognized in 1962. The Tribe's constitution charges it with protecting the natural resources of its homeland, and today it co-stewards Everglades National Park alongside federal partners.</p>
+      <p>Along the Tamiami Trail the Tribe also welcomes visitors at the Miccosukee Indian Village &amp; Museum and the Miccosukee Casino &amp; Resort. The Plaza is the newest way to stop, learn, and support the Tribe's presence in the Everglades.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block route" id="location">
+  <div class="wrap">
+    <div class="sign" aria-label="Highway sign: Miami, Miccosukee Plaza, Naples">
+      <div class="row"><span>Miami</span><small>East · US-41</small></div>
+      <div class="row here"><span>Miccosukee Plaza</span><small>Exit here</small></div>
+      <div class="row"><span>Naples</span><small>West · US-41</small></div>
+    </div>
+    <div class="addr">
+      <span class="eyebrow">Find Us</span>
+      <p class="big">36340 SW 8th St<br>Miami, FL 33194</p>
+      <dl>
+        <dt>Route</dt><dd>US-41 / Tamiami Trail, western Miami-Dade County — next to the Miccosukee Indian Village, about a mile west of the Shark Valley entrance to Everglades National Park.</dd>
+        <dt>GPS</dt><dd style="font-variant-numeric:tabular-nums">25.76142° N, 80.77252° W <span style="color:var(--muted)">· listed as “Miccosukee Plaza” in Apple Maps</span></dd>
+        <dt>Phone</dt><dd><span class="pending">Pending from client</span></dd>
+        <dt>Hours</dt><dd><span class="pending">Pending from client</span></dd>
+      </dl>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px">
+        <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=25.76142,-80.77252" target="_blank" rel="noopener">Directions · Google Maps</a>
+        <a class="btn btn-dark" href="https://maps.apple.com/?daddr=25.76142,-80.77252&q=Miccosukee+Plaza" target="_blank" rel="noopener">Directions · Apple Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#top" style="color:#fff"><img src="images/logo.jpg" alt="">Miccosukee Plaza</a>
+        <p style="margin-top:14px;max-width:40ch;color:#B9AFA1">Owned and operated by the Miccosukee Tribe of Indians of Florida. A new state-of-the-art plaza on the Tamiami Trail for travelers between Miami and Naples.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#about">About the Plaza</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#tribe">The Tribe</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/miccosukeeplaza/" target="_blank" rel="noopener">Instagram @miccosukeeplaza</a></li>
+                    <li><a href="https://miccosukee.com/" target="_blank" rel="noopener">Miccosukee Casino &amp; Resort</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Miccosukee Tribe of Indians of Florida. All rights reserved.</span>
+      <span>Privacy · Terms <span class="pending">(pending)</span></span>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
